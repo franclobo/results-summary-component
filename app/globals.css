@@ -88,6 +88,16 @@ body {
   color: var(--pale_blue);
 }
 
+.attribution {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  font-size: 11px; text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
