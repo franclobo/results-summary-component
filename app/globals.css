@@ -3,27 +3,89 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --light_red: hsl(0, 100%, 67%);
+  --bg_light_red: hsl(0, 100%, 67%, 0.1);
+  --orangey_yellow: hsl(39, 100%, 56%);
+  --bg_orangey_yellow: hsl(39, 100%, 56%, 0.1);
+  --green_teal: hsl(166, 100%, 37%);
+  --bg_green_teal: hsl(166, 100%, 37%, 0.1);
+  --cobalt_blue: hsl(234, 85%, 45%);
+  --bg_cobalt_blue: hsl(234, 85%, 45%, 0.1);
+  --light_slate_blue: hsl(252, 100%, 67%);
+  --bg_light_slate_blue: hsl(252, 100%, 67%, 0.1);
+  --light_royal_blue: hsl(241, 81%, 54%);
+  --violet_blue: hsla(256, 72%, 46%, 1);
+  --persian_blue: hsla(241, 72%, 46%, 0);
+  --white: hsl(0, 0%, 100%);
+  --pale_blue: hsl(221, 100%, 96%);
+  --light_lavender: hsl(241, 100%, 89%);
+  --dark_gray_blue: hsl(224, 30%, 27%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --light_red: hsl(0, 100%, 67%);
+    --bg_light_red: hsl(0, 100%, 67%, 0.1);
+    --orangey_yellow: hsl(39, 100%, 56%);
+    --bg_orangey_yellow: hsl(39, 100%, 56%, 0.1);
+    --green_teal: hsl(166, 100%, 37%);
+    --bg_green_teal: hsl(166, 100%, 37%, 0.1);
+    --cobalt_blue: hsl(234, 85%, 45%);
+    --bg_cobalt_blue: hsl(234, 85%, 45%, 0.1);
+    --light_slate_blue: hsl(252, 100%, 67%);
+    --bg_light_slate_blue: hsl(252, 100%, 67%, 0.1);
+    --light_royal_blue: hsl(241, 81%, 54%);
+    --violet_blue: hsla(256, 72%, 46%, 1);
+    --persian_blue: hsla(241, 72%, 46%, 0);
+    --white: hsl(0, 0%, 100%);
+    --pale_blue: hsl(221, 100%, 96%);
+    --light_lavender: hsl(241, 100%, 89%);
+    --dark_gray_blue: hsl(224, 30%, 27%);
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+}
+
+.bg-light-royal-blue {
+  background-color: var(--light_royal_blue);
+  color: var(--pale_blue);
+}
+
+.bg-cobalt-blue {
+  background-color: var(--cobalt_blue);
+  color: var(--pale_blue);
+}
+
+.text-light-lavender {
+  color: var(--light_lavender);
+}
+
+.bg-bg-light-red {
+  background-color: var(--bg_light_red);
+  color: var(--light_red);
+}
+
+.bg-orangey-yellow {
+  background-color: var(--bg_orangey_yellow);
+  color: var(--orangey_yellow);
+}
+
+.bg-green-teal {
+  background-color: var(--bg_green_teal);
+  color: var(--green_teal);
+}
+
+.bg-light-slate-blue {
+  background-color: var(--bg_light_slate_blue);
+  color: var(--light_slate_blue);
+}
+
+.bg-dark-grey-blue {
+  background-color: var(--dark_gray_blue);
+  color: var(--pale_blue);
 }
 
 @layer utilities {

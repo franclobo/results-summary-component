@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Results summary component solution
 
-## Getting Started
+This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Frontend Mentor - Results summary component solution](#frontend-mentor---results-summary-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- **Bonus**: Use the local JSON data to dynamically populate the content
+
+### Screenshot
+
+![](./screenshot.jpg)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [Styled Components](https://styled-components.com/) - For styles
+
+### What I learned
+
+I learned how to use the `useContext` hook in Next con Typescript to pass data from a parent component to a child component. Here is the code snippet:
+
+```js
+'use client';
+import { createContext, useState, useEffect } from 'react';
+import data from '../public/data.json';
+
+type ItemType = {
+  category: string;
+  score: number;
+  icon: string;
+};
+
+export type DataContextType = {
+  data: ItemType[];
+};
+
+type DataProviderProps = {
+  children: React.ReactNode;
+};
+
+export const DataContext = createContext<DataContextType>({
+  data: [],
+});
+
+const DataProvider = ({ children }: DataProviderProps) => {
+  const [state, setState] = useState<ItemType[]>([]);
+
+  useEffect(() => {
+    setState(data);
+  }, []);
+
+  return (
+    <DataContext.Provider value={{ data: state }}>
+      {children}
+    </DataContext.Provider>
+  );
+};
+
+export default DataProvider;
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Continued development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I will continue to learn how to use the `useContext` hook in Next.js with Typescript to pass data from a parent component to a child component. I will also learn how to use the `useReducer` hook in Next.js with Typescript to manage the state of the application. I will also learn how to use the `useEffect` hook in Next.js with Typescript to fetch data from an API.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Author
 
-## Learn More
+- Website - [WebMinds Studio](https://www.webmindsstudio.com/)
+- Frontend Mentor - [@franclobo](https://www.frontendmentor.io/profile/franclobo)
+- Twitter - [@Pancho2788](https://twitter.com/Pancho2788)
 
-To learn more about Next.js, take a look at the following resources:
+## Acknowledgments
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I would like to thank Frontend Mentor for providing the challenge and anybody who will review my solution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
