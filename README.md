@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![image](https://github.com/franclobo/results-summary-component/assets/58642949/ef3cc2fc-e731-474f-9039-3697177771c2)
 
 ### Links
 
